@@ -48,3 +48,22 @@ void RadList::loadPlaylist(const std::string& filename) {
         throw std::invalid_argument("Could not open " + filename);
     }
 }
+void RadList::next(){
+  // if (!(nowPlaying > 0 && nowPlaying < queue_.size())
+  //   throw out_of_range("Error: out of range");
+  nowPlaying_++;
+}
+void RadList::prev(){
+  // if (!(nowPlaying > 0 && nowPlaying < queue_.size())
+  //   throw out_of_range("Error: out of range");
+  nowPlaying_--;
+}
+Song RadList::nowPlaying(){
+  return *nowPlaying_;
+}
+void RadList::addToQueue(const Song& song){
+  queue_.push_back(song);
+}
+void RadList::playNext(const Song& song){
+  queue_.push_front(song);
+}
