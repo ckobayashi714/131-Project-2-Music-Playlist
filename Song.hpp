@@ -11,7 +11,6 @@ private:
     bool explicit_lyrics_;
 
 public:
-    //Song();
     Song(std::string, std::string, std::string, unsigned int, bool);
 
     std::string name();

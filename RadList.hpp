@@ -49,13 +49,9 @@ void RadList::loadPlaylist(const std::string& filename) {
     }
 }
 void RadList::next(){
-  // if (!(nowPlaying > 0 && nowPlaying < queue_.size())
-  //   throw out_of_range("Error: out of range");
   nowPlaying_++;
 }
 void RadList::prev(){
-  // if (!(nowPlaying > 0 && nowPlaying < queue_.size())
-  //   throw out_of_range("Error: out of range");
   nowPlaying_--;
 }
 Song RadList::nowPlaying(){
