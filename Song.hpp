@@ -30,12 +30,13 @@ Song::Song(std::string name, std::string artist, std::string album, unsigned int
 std::string Song::name() { return name_; }
 std::string Song::artist() { return artist_; }
 std::string Song::album() { return album_; }
+
 // function returns only the minutes portion.
 unsigned int Song::minutes() {
   int minutes = duration_ / 60;
   return minutes;
 }
-// funtion return only the seconds portion.
+// function returns only the seconds portion.
 unsigned int Song::seconds() {
   int seconds = duration_ % 60;
   return seconds;

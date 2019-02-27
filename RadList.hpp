@@ -48,16 +48,16 @@ void RadList::loadPlaylist(const std::string& filename) {
         throw std::invalid_argument("Could not open " + filename);
     }
 }
-// function plays the next song in the queue. Making sure it's not the last in
-// the list or that the list is empty, if so it throws an exception..
+// function plays the next song in the queue. Checking to see if it's the last
+// song in the queue or if the queue is empty, if so, it throws an exception.
 void RadList::next(){
   if (nowPlaying_ == queue_.end() || queue_.empty())
     throw std::out_of_range("Error: Out of Range.");
   else
     nowPlaying_++;
 }
-// function plays the previous song in the queue. Making sure it's not the first
-// song in the list or that the list is empty, if sovit throws an exception.
+// function plays the previous song in the queue. Checking to see if it's the
+// first song in the queue or if the queue is empty, if so, it throws an exception.
 void RadList::prev(){
   if (nowPlaying_ == queue_.begin() || queue_.empty())
     throw std::out_of_range("Error: Out of Range.");
@@ -68,7 +68,7 @@ void RadList::prev(){
 Song RadList::nowPlaying(){
   return *nowPlaying_;
 }
-// function adds a new song to the playlist, placing it at the end of the queue.
+// function adds a new song to the queue, placing it at the last postion.
 void RadList::addToQueue(const Song& song){
   queue_.push_back(song);
 }
